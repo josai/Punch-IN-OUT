@@ -1,0 +1,19 @@
+This is the settings file for the punch IN/OUT program. Here you will find 
+all relevant data such as current file paths and extensions relating to the
+program. DO NOT ADD OR REMOVE LINES! Only change the data after an " = ".
+After changing these settings you must restart the program for them to take
+effect.
+Please note that any spaces in your directory name should be replaced
+with an underscore like this " C:\jon_doe\" instead of " C:\jon doe\".
+
+
+main file path        = C:\Users\jon_doe\Desktop\PUNCHOUT\DATA\
+
+live list path        = C:\Users\jon_doe\Desktop\PUNCHOUT\
+
+live list backup path = C:\Users\jon_doe\Desktop\
+
+file extensions       = .txt
+
+expiration in hours   = 36
+
