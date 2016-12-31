@@ -16,9 +16,9 @@ Setup:
 	"LIVE LIST.txt" into the folder.
 	
 	3.Open the "SETTINGS.txt" file and change the directories to the ones
-	your computer that you will be using. You can also change the file 
+	on your computer that you will be using. You can also change the file 
 	type and time it takes for a check in to expire. But default settings
-	are fine. Save the file and close it.
+	are fine for that. Save the file and close it.
 
 	4.Run the "punchout.py" file in the same folder as "SETTINGS.txt"
 	and viola!
