@@ -51,12 +51,12 @@ def clear_console_screen():
 
 
 def print_logs(some_logs, settings):
+    num_people = ("0" + str(len(some_logs)))[-2:]
     if settings.mode == 1:
         settings.generate_current_path()
         some_logs = get_list(settings.current_path, settings.file_name, 25)
     else:
         some_logs = some_logs[:25]
-    num_people = ("0" + str(len(some_logs)))[-2:]
     top_field = (normalize_string("DATE", 0, 11) +
                  normalize_string("TIME", 0, 13) +
                  normalize_string("NAME", 0, 16) +
