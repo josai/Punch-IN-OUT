@@ -1,7 +1,7 @@
 This is a punch IN/OUT program designed to keep track of people entering in 
 or out of a building. It's meant to be used with an ID card with two 
 barcodes that have the persons full name with "IN/OUT" at the end. The 
-program saves all the files as as .txt files so it should work with any 
+program saves all the files as .txt files so it should work with any 
 windows machine that has python 2.7 installed.
 
 
