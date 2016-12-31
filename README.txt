@@ -10,7 +10,7 @@ Python 2.7 must be installed on your machine!
 
 Setup:
 
-	1.Create/find the folders you'd like to keep all the data files in.
+	1.Create/find the folders you'd like to keep all the files in.
 	
 	2.Move "punchout.py","punchoutclasses.py","SETTINGS.txt", and
 	"LIVE LIST.txt" into the folder.
