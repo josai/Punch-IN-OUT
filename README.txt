@@ -41,7 +41,9 @@ Usage:
 	* If someone has been checked as "IN" for more than half of the
 	expiration time it will be displayed as "EXPIRED". If they have been
 	checked as "IN" for MORE than the expiration time they will be 
-	checked out automatically and logged as "EXPIRED"
+	checked out automatically and logged as "EXPIRED".
+
+  * To exit, type "exit" or hit Ctrl+C.
 
 
 
