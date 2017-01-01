@@ -80,8 +80,8 @@ def remove_underscore(a_string):
 
 def calculate_hours_beteween(before_date, after_date):
     """Returns number of hours between two dates."""
-    d1 = numbers_2_list(before_date)
-    d2 = numbers_2_list(after_date)
+    d1 = str_numbers_2_list(before_date)
+    d2 = str_numbers_2_list(after_date)
     date_1 = datetime(d1[0], d1[1], d1[2], 0, 0, 0,)
     date_2 = datetime(d2[0], d2[1], d2[2], 0, 0, 0)
     days_between = ((date_2 - date_1).days)
@@ -90,6 +90,16 @@ def calculate_hours_beteween(before_date, after_date):
     return total
 
 
-def numbers_2_list(a_string):
-    """Returns a list of numbers in the given string"""
-    return [int(x) for x in a_string if x.isdigit()]
+def str_numbers_2_list(a_string):
+    """Returns a list of intgers seperated by the NON-digit characters
+    from the input string."""
+    a_string = str(a_string) + " "
+    new_string = ""
+    new_list = []
+    for c in a_string:
+        if c.isdigit() is True:
+            new_string = new_string + c
+        elif len(new_string) >= 1:
+            new_list.append(int(new_string))
+            new_string = ""
+    return new_list
