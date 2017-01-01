@@ -1,5 +1,6 @@
 import os
 from punchoutclasses import *
+import sys
 
 
 def program():
@@ -18,6 +19,10 @@ def program():
             if count >= 8:
                 settings.mode = 0
                 count = 0
+        except SystemExit:
+            sys.exit()
+        except KeyboardInterrupt:
+            sys.exit()
         except:
             pass
 
@@ -106,6 +111,8 @@ def input_prompt(in_building, settings):
         if "MODE" == an_input:
             settings.change_mode()
             report = mode_changed
+        elif "EXIT" == an_input:
+            sys.exit()
         elif " " in an_input:
             an_input = an_input.split()
             an_input.reverse()
