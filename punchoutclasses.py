@@ -91,15 +91,5 @@ def calculate_hours_beteween(before_date, after_date):
 
 
 def numbers_2_list(a_string):
-    a_string = str(a_string)
-    new_string = ""
-    acceptable = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    new_list = []
-    for c in a_string:
-        if c not in acceptable:
-            c = " "
-        new_string = new_string + c
-    new_string = new_string.split()
-    for i in new_string:
-        new_list.append(int(i))
-    return new_list
+    """Returns a list of numbers in the given string"""
+    return [int(x) for x in a_string if x.isdigit()]
