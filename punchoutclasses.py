@@ -47,7 +47,7 @@ class check(object):
         if len(info) > 3:
             self.datetime = info[4] + " " + info[3]
         else:
-            self.datetime = datetime.today()
+            self.update_time()
 
     def update(self, settings):
         """Updates the mark in the live list to expired if passed expiration
@@ -55,6 +55,9 @@ class check(object):
         self.time_in = calculate_hours_beteween(self.datetime, datetime.now())
         if self.time_in >= (settings.expiration / 2):
             self.mark = "EXPIRED"
+    
+    def update_time(self):
+        self.datetime = datetime.today()
 
 
 def import_settings():
