@@ -169,6 +169,7 @@ def update_live(occupants, new_log, settings):
             occupants.remove(person)
             break
         elif person.time_in >= sett.expiration:
+            person.update_time()
             occupants.remove(person)
             log_string = create_log_string(person)
             save_data(sett.current_path, sett.file_name, [log_string], "a")
