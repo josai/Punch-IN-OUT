@@ -39,7 +39,7 @@ def get_list(a_path, a_list, max_length):
     people = []
     for i in info:
         i = i.split()
-        i = [i[2], i[3], i[4], i[1], i[0]]
+        i = [i[2][:12], i[3][:12], i[4], i[1], i[0]]
         person = check()
         person.import_info(i)
         people.append(person)
@@ -60,22 +60,21 @@ def print_logs(some_logs, settings):
     if settings.mode == 1:
         settings.generate_current_path()
         some_logs = get_list(settings.current_path, settings.file_name, 25)
-    else:
-        some_logs = some_logs[:25]
+
     top_field = (normalize_string("DATE", 0, 11) +
-                 normalize_string("TIME", 0, 13) +
-                 normalize_string("NAME", 0, 16) +
-                 normalize_string("SURNAME", 0, 24) +
-                 normalize_string("CHECKED", 0, 10)
+                 normalize_string("TIME", 1, 13) +
+                 normalize_string("NAME", 1, 16) +
+                 normalize_string("SURNAME", 1, 24) +
+                 normalize_string("CHECKED", 1, 10)
                  )
     print_spaces(2)
-    print normalize_string(top_field, 4, 72)
-    print normalize_string(("-" * 72), 4, 72)
+    print normalize_string(top_field, 4, 78)
+    print normalize_string(("-" * 78), 4, 78)
     for log in some_logs:
-        print normalize_string(create_log_string(log), 4, 72)
-    print normalize_string(("-" * 72), 4, 72)
+        print normalize_string(create_log_string(log), 4, 78)
+    print normalize_string(("-" * 78), 4, 78)
     print normalize_string((num_people + " TOTAL IN"), 59, 16)
-    print normalize_string(("-" * 72), 4, 72)
+    print normalize_string(("-" * 78), 4, 78)
     print_spaces(2)
 
 
@@ -102,8 +101,8 @@ def input_prompt(in_building, settings):
     just continues to prompt the user for a valid answer."""
     valid_inputs = ["IN", "OUT"]
     print_spaces(1)
-    error = normalize_string("ERROR: Last input was invalid...", 4, 72)
-    mode_changed = normalize_string("MODE CHANGED", 4, 72)
+    error = normalize_string("ERROR: Last input was invalid...", 4, 78)
+    mode_changed = normalize_string("MODE CHANGED", 4, 78)
     report = error
     while True:
         an_input = raw_input("    SCAN ID CARD: ")
@@ -151,10 +150,10 @@ def update_lists(settings, a_log):
 def create_log_string(a_person):
     """Returns a normalized string from the "check" classe for printing in the
     console or for saving in a text file."""
-    normal_string = (normalize_string(str(a_person.datetime)[:19], 0, 24) +
-                     normalize_string(a_person.first_name, 0, 16) +
-                     normalize_string(a_person.last_name, 0, 24) +
-                     normalize_string(a_person.mark, 0, 7)
+    normal_string = (normalize_string(str(a_person.datetime)[:19], 1, 24) +
+                     normalize_string(a_person.first_name, 1, 16) +
+                     normalize_string(a_person.last_name, 1, 24) +
+                     normalize_string(a_person.mark, 1, 7)
                      )
     return normal_string
 
